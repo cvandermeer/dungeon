@@ -1,0 +1,5 @@
+<%= form_for @monster do |f| %>
+  <%= f.text_field :name, placeholder: 'naam' %>
+  <%= f.number_field :strength, placeholder: 'strenght' %>
+  <%= f.submit 'Oproepen', data: { disable_with: 'Aan het versturen...' } %>
+<% end %>

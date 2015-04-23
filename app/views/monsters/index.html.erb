@@ -1,0 +1,8 @@
+<h1>Monsters</h1>
+<%= link_to 'monster oproepen', new_monster_path, id: 'new_monster_link', remote: true %>
+<% @monsters.each do |m| %>
+  <p>
+    <%= m.name %>
+    <%= m.strength %>
+  </p>
+<% end %>

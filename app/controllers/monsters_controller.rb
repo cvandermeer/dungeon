@@ -5,11 +5,15 @@ class MonstersController < ApplicationController
     @monsters = Monster.all
   end
 
+  def new
+    @monster = Monster.new
+  end
+
   def create
-    @monsters = Monster.new(monster_params)
+    @monster = Monster.new(monster_params)
     if @monster.save
       respond_to do |format|
-        format.html{ redirect_to monster_path }
+        format.html{ redirect_to monsters_path }
         format.js
       end
     end
@@ -32,4 +36,9 @@ class MonstersController < ApplicationController
       end
     end
   end
+
+  private
+    def monster_params
+      params.require(:monster).permit(:name, :strength)
+    end
 end
