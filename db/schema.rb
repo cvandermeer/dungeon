@@ -15,7 +15,8 @@ ActiveRecord::Schema.define(version: 20150423130208) do
 
   create_table "monsters", force: :cascade do |t|
     t.string  "name"
-    t.integer "strength"
+    t.integer "level"
+    t.integer "treasure"
   end
 
 end

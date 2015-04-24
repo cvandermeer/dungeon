@@ -1,5 +1,6 @@
-<%= form_for @monster do |f| %>
+<%= form_for @monster, remote: true do |f| %>
   <%= f.text_field :name, placeholder: 'naam' %>
-  <%= f.number_field :strength, placeholder: 'strenght' %>
+  <%= f.number_field :level, placeholder: 'strenght' %>
+   <%= f.number_field :treasure, placeholder: 'treasure' %>
   <%= f.submit 'Oproepen', data: { disable_with: 'Aan het versturen...' } %>
 <% end %>

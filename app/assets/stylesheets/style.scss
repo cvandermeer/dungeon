@@ -1,0 +1,70 @@
+body{
+  width:960px;
+  margin:auto;
+  h1{
+    text-align:center;
+  }
+}
+
+.door{
+  margin:auto;
+  width:200px;
+  height:300px;
+  position:relative;
+  z-index:5;
+  .doorknob{
+    position:absolute;
+    width:25px;
+    height:25px;
+    background:#cc9900;
+    border-radius:50px;
+    z-index:10;
+    right:20px;
+    top:150px;
+    transition:1s;
+  }
+  a{
+    display:block;
+    width:100%;
+    height:100%;
+    position: absolute;
+  }
+  .openingdoor{
+    background:#71451a;
+    display:block;
+    border-right: 0px solid #5a3715;
+    width:100%;
+    height:100%;
+    transition:1s;
+    position: absolute;
+  }
+  &:hover{
+    .doorknob{
+      right:70px;
+    }
+    .openingdoor{
+      width:80% ;
+      border-right:10px solid #5a3715;
+    }
+  }
+}
+
+.backdoor{
+  background:#000;
+  width:100%;
+  height:100%;
+  z-index:2;
+}
+
+.card{
+  margin:auto;
+  width:200px;
+  height:300px;
+  background:#f8ce94;
+  border:5px solid #000;
+  border-radius:25px;
+  text-align:center;
+  h2, h3{
+    margin:0;
+  }
+}

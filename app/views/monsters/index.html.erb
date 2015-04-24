@@ -1,8 +1,8 @@
 <h1>Monsters</h1>
-<%= link_to 'monster oproepen', new_monster_path, id: 'new_monster_link', remote: true %>
-<% @monsters.each do |m| %>
-  <p>
-    <%= m.name %>
-    <%= m.strength %>
-  </p>
-<% end %>
+<%= link_to 'Monster oproepen', new_monster_path, id: 'new_monster_link', remote: true %>
+
+<div class='monsters'>
+  <% @monsters.reverse.each do |m| %>
+    <p><%= m.name %> (Level <%= m.level %>) <%= m.treasure %> Schatten</p>
+  <% end %>
+</div>

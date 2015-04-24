@@ -1,5 +1,5 @@
 class MonstersController < ApplicationController
-  before_action :set_monster, only: [:update, :destroy]
+  before_action :set_monster, only: [:update, :destroy, :show]
 
   def index
     @monsters = Monster.all
@@ -9,10 +9,13 @@ class MonstersController < ApplicationController
     @monster = Monster.new
   end
 
+  def show
+  end
+
   def create
     @monster = Monster.new(monster_params)
-    if @monster.save
-      respond_to do |format|
+    respond_to do |format|
+      if @monster.save
         format.html{ redirect_to monsters_path }
         format.js
       end
@@ -39,6 +42,10 @@ class MonstersController < ApplicationController
 
   private
     def monster_params
-      params.require(:monster).permit(:name, :strength)
+      params.require(:monster).permit(:name, :treasure, :level)
+    end
+
+    def set_monster
+      @monster = Monster.find(params[:id])
     end
 end
