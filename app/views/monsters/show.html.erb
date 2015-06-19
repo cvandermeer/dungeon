@@ -3,5 +3,5 @@
 <div class='card'>
   <h3>Level <%= @monster.level %></h3>
   <h2><%= @monster.name %></h2>
-  <h4><%= @monster.treasure %> Schatten</h4>
+  <h4><%= @monster.treasure %> Schat<%= 'ten' if @monster.treasure > 1 %></h4>
 </div>
